@@ -5,7 +5,7 @@ create table Pilot_information(
 P_id char(10) primary key,P_staff_no char(20) not null,P_license_no char(20) unique,P_fname varchar(20)not null,P_lname varchar(20) not null,
 P_age int not null, year_of_experience int,P_no_of_flight int not null,P_position varchar(20) not null,flying_hours int,
 P_salary money not null,P_email varchar(30)
-)
+);
 
 select *from Pilot_information
 
@@ -32,7 +32,7 @@ WHERE P_id = '8910357LAP';
 
 create table flight_details(
 flight_id char(10) primary key,flight_no char(15)not null,flight_name varchar (30),Business_Seat int not null,Economy_seat int not null
-)
+);
 
 select *from flight_details
 
@@ -243,7 +243,7 @@ SELECT i.f_attendant_passport_no, i.f_attendant_fname+''+ i.f_attendant_lname as
 FROM flight_attendants i
 LEFT JOIN flight_attendants a ON i.f_attendant_passport_no = a.f_attendant_passport_no
 LEFT JOIN Pilot_information c ON a.f_attendant_passport_no = c.P_id
-WHERE c.P_fname = 'Mikael';
+WHERE c.P_fname = 'Mikael+Tinnason';
 
 
 --3. Find the flight attendant who served the most number of flights.
